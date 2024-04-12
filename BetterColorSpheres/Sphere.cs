@@ -8,7 +8,9 @@ namespace BetterColorSpheres
     public class Sphere
     {
         public Color Color { get; }
+        private float raio;
         public float Raio  { get; private set; }
+        private int timesTrown;
         public int TimesTrown { get; private set; } = 0;
 
         public Sphere (Color color,float raio)
@@ -18,11 +20,11 @@ namespace BetterColorSpheres
         } 
         public void Pop()
         {
-            Raio = 0;
+            raio = 0;
         }
         public void Throw()
         {
-            if (Raio > 0)
+            if (raio > 0)
             {
                 TimesTrown++;   
             }            
