@@ -10,7 +10,7 @@ namespace BetterColorSpheres
         public byte Red { get;}
         public byte Green { get; }
         public byte Blue { get; }
-        public byte Alpha { get; } = 255;
+        public byte Alpha { get;}
         public byte Grey => (byte)((Red + Green + Blue) / 3);
 
         public Color(byte red, byte green, byte blue, byte alpha)
@@ -27,8 +27,7 @@ namespace BetterColorSpheres
             Red =   red;
             Green = green;
             Blue = blue;
-            //alpha is initialized to 255 by default            
-
+            Alpha = 255;
         }
 
         

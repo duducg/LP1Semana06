@@ -11,12 +11,16 @@ namespace BetterColorSpheres
         private float raio;
         public float Raio  { get; private set; }
         private int timesTrown;
-        public int TimesTrown { get; private set; } = 0;
+        //values by omission only work in auto implement properties 
+        public int TimesTrown { get; private set; }
 
         public Sphere (Color color,float raio)
         {
             Color = color;
-            Raio = raio;                   
+            Raio = raio;
+            //private set is needed to allow access to the rest of the code
+            //not the constructor
+            TimesTrown = 0;                  
         } 
         public void Pop()
         {
@@ -24,8 +28,10 @@ namespace BetterColorSpheres
         }
         public void Throw()
         {
-            if (raio > 0)
+            if (Raio > 0)
             {
+                //private set is needed to allow access to the rest of the code
+                //not the constructor
                 TimesTrown++;   
             }            
         }
